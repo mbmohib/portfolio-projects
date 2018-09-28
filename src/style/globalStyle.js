@@ -24,6 +24,10 @@ const Style = createGlobalStyle`
         padding: 0;
     }
 
+    figure {
+        margin: 0;
+    }
+
     img {
         max-width: 100%;
         height: auto;
@@ -39,6 +43,8 @@ const Style = createGlobalStyle`
     }
 
     a {
+        text-decoration: none;
+
         :focus {
             text-decoration: none;
         }

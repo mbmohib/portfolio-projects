@@ -1,6 +1,8 @@
 export default {
     primaryColor: '#26C281',
     secondaryColor: '#edeef3',
+    greyColorOne: 'hsl(200, 25%, 96%)',
+    greyColorTwo: 'hsl(200, 25%, 88%)',
     linkColor: '#0056b3',
     fontColor: 'rgba(0, 0, 0, 0.87)',
 
