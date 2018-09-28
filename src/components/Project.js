@@ -1,14 +1,10 @@
 import React from 'react';
-import ThumbnailPic from '../images/m-heros-thumb.jpg';
-import ReactLogo from '../images/react.png';
 import Skills from './Skills';
-import WordpressLogo from '../images/wordpress.svg';
 import styled from 'styled-components';
 import Title from './Title';
 import SubTitle from './Subtitle';
 import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import images from './ImportImages';
 
 const Hero = styled.div`
     ${'' /* cursor: pointer; */}
@@ -75,33 +71,35 @@ const Project = props => {
     return (
         <Hero>
             <Thumbnail>
-                <img src={ThumbnailPic} alt=""/>
+                <img src={images[props.project.thumbnail]} alt=""/>
             </Thumbnail>
     
             <HeroMeta>
                 <header>
-                    <Title>M-Heros</Title>
+                    <Title>{props.project.title}</Title>
                 </header>
                 <main>
-                    <Skills />
+                    <Skills skills={props.project.skills}/>
                 </main>
                 <footer>
-                    <HeroMetaFooterItem>
-                        <img src={ReactLogo} alt=""/>
-                        <SubTitle>React</SubTitle>
-                    </HeroMetaFooterItem>
-                    <HeroMetaFooterItem>
-                        <img src={WordpressLogo} alt=""/>
-                        <SubTitle>Wordpress</SubTitle>
-                    </HeroMetaFooterItem>
+                    {
+                        props.project.stacks && 
+                        props.project.stacks.map( (stack, index) => (
+                            <HeroMetaFooterItem key={index}>
+                                <img src={images[stack.toLowerCase()]} alt=""/>
+                                <SubTitle>{stack}</SubTitle>
+                            </HeroMetaFooterItem>
+                        ))
+                    }
+                    
                 </footer>
             </HeroMeta>
     
             <HeroFooter>
-                <Button href="#text-buttons">
+                <Button href={props.project.github_link}>
                     Github
                 </Button>
-                <Button variant="contained" color="primary">
+                <Button href={props.project.live_link} variant="contained" color="primary">
                     Go Live
                 </Button>
             </HeroFooter>

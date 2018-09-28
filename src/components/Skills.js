@@ -1,12 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import AntLogo from '../images/ant-design.svg'
-import ReactRouterLogo from '../images/react-router.png'
-import StyleComponentsLogo from '../images/style-components.png'
+import React from 'react';
+import styled from 'styled-components';
+import images from './ImportImages';
+import DeleteIcon from '../images/delete.svg';
 
 const SkillsWrapper = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
+    display: ${props => props.list ? 'block' : 'flex'};
+    flex-wrap: ${props => props.list || 'wrap'};
     padding: ${props => props.large ? '20px 0' : '10px 0'};
     justify-content: ${props => props.large ? 'center' : 'flex-start'};
 
@@ -40,24 +39,26 @@ const SkillsWrapper = styled.ul`
     }
 `;
 
+const CrossIcon = styled.img`
+    font-size: 1.4rem;
+    margin-left: 10px;
+`;
+
 const Skills = props => (
-    <SkillsWrapper large={props.large}>
-        <li>
-            <img src={StyleComponentsLogo} alt="" />
-            Style Components
-        </li>
-        <li>
-            <img src={ReactRouterLogo} alt="" />
-            React Router
-        </li>
-        <li>
-            <img src={AntLogo} alt="" />
-            Ant Design
-        </li>
-        <li>
-            <img src={StyleComponentsLogo} alt="" />
-            Style Components
-        </li>
+    <SkillsWrapper list={props.list} large={props.large}>
+        {
+            props.skills &&
+            props.skills.map( (skill, index) => (
+                <li className="skill-item" onClick={(e) => props.handleFilter(e.target)} key={index}>
+                    <img src={images[skill.toLowerCase().split(' ').join('-')]} alt="" />
+                    {skill}
+                    {
+                        props.list && 
+                        <CrossIcon src={DeleteIcon} alt="Delete Icon" />
+                    }
+                </li>
+            ))
+        }
     </SkillsWrapper>
 )
 
