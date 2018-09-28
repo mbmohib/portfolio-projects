@@ -37,6 +37,12 @@ const Style = createGlobalStyle`
             list-style: none;
         }
     }
+
+    a {
+        :focus {
+            text-decoration: none;
+        }
+    }
 `
 
 const GlobalStyle = (props) => {

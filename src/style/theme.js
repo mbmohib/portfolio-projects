@@ -1,7 +1,8 @@
 export default {
     primaryColor: '#26C281',
-    secondaryColor: '#EB7A3F',
+    secondaryColor: '#edeef3',
     linkColor: '#0056b3',
+    fontColor: 'rgba(0, 0, 0, 0.87)',
 
     titleFont: `'Josefin Sans', sans-serif;`,
     normalFont: `'Roboto', sans-serif;`,

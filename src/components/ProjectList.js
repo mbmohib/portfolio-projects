@@ -1,23 +1,26 @@
 import React from 'react';
 import Container from './Container';
 import Project from '../components/Project';
-import { Row, Col } from 'antd';
+import Grid from '@material-ui/core/Grid';
 
 class ProjectList extends React.Component {
     render() {
         return (
             <Container>
-                <Row gutter={24}>
-                    <Col xs={24} sm={12} md={8}>
+                <Grid container spacing={16}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Project />
-                    </Col>
-                    <Col xs={24} sm={12} md={8}>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Project />
-                    </Col>
-                    <Col xs={24} sm={12} md={8}>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Project />
-                    </Col>
-                </Row>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Project />
+                    </Grid>
+                </Grid>
             </Container>
         )
     }
