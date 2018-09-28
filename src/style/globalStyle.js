@@ -4,8 +4,8 @@ import theme from './theme'
 
 const Style = createGlobalStyle`
 
-    @import url('https://fonts.googleapis.com/css?family=Poiret+One');
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400');
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
     * {
         box-sizing: border-box;
@@ -16,44 +16,36 @@ const Style = createGlobalStyle`
         margin: 0;
         font-family: ${props => props.theme.normalFont};
         font-size: 1rem;
+        line-height: 1.5;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: ${props => props.theme.titleFont};
         margin: 0;
         padding: 0;
     }
 
-    .container {
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
-      @media (min-width: 768px) {
-        .container {
-          width: 750px;
-        }
-    }
-
-      @media (min-width: 992px) {
-        .container {
-          width: 970px;
-        }
-    }
-
-      @media (min-width: 1200px) {
-        .container {
-          width: 1170px;
+    ul {
+        margin: 0;
+        padding: 0;
+        
+        li {
+            list-style: none;
         }
     }
 `
 
-const GlobalStyle = () => {
+const GlobalStyle = (props) => {
     return (
         <ThemeProvider theme={theme}>
-            <Style />
+            <div>
+                <Style />
+                {props.children}
+            </div>
         </ThemeProvider>
     )
 }

@@ -5,10 +5,9 @@ import GlobalStyle from './style/globalStyle';
 class App extends Component {
     render() {
         return (
-            <div>
-                <GlobalStyle />
+            <GlobalStyle>
                 <AppRouter />
-            </div>
+            </GlobalStyle>
         )
     }
 }
