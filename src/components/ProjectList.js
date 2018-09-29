@@ -202,7 +202,10 @@ class ProjectList extends React.Component {
                                     sm={6}
                                     md={4}
                                 >
-                                    <Project project={project} />
+                                    <Project 
+                                        handleFilter={this.handleFilter} 
+                                        project={project} 
+                                    />
                                 </Grid>
                             ))}
                 </Grid>
