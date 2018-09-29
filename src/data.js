@@ -94,7 +94,7 @@ export default [
             'React Router'
         ],
         stacks: ['React'],
-        github_link: 'https://github.com/mbmohib/read-more-button-plugin',
-        live_link: 'https://mbmohib.github.io/read-more-button-plugin/'
+        github_link: 'https://github.com/mbmohib/portfolio-projects',
+        live_link: 'http://mohib-projects.firebaseapp.com'
     }
 ]
