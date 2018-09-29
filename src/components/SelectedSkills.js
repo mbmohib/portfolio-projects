@@ -38,7 +38,7 @@ const SelectedSkills = props => (
 
             <Divider />
             
-            <Skills handleFilter={props.deleteFilter} list skills={props.skills} />
+            <Skills handleFilter={props.deleteFilter} list={true} skills={props.skills} />
         </DrawerWrapper>
     </Drawer>
 )

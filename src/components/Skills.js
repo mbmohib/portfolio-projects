@@ -4,8 +4,8 @@ import images from './ImportImages';
 import DeleteIcon from '../images/delete.svg';
 
 const SkillsWrapper = styled.ul`
-    display: ${props => props.list ? 'block' : 'flex'};
-    flex-wrap: ${props => props.list || 'wrap'};
+    display: ${props => props.list.display};
+    flex-wrap: ${props => props.list.flexWrap};
     padding: ${props => props.large ? '20px 0' : '10px 0'};
     justify-content: ${props => props.large ? 'center' : 'flex-start'};
 
@@ -45,7 +45,7 @@ const CrossIcon = styled.img`
 `;
 
 const Skills = props => (
-    <SkillsWrapper list={props.list} large={props.large}>
+    <SkillsWrapper list={props.list ? {display: 'block'} : {display: 'flex', flexWrap: 'wrap'}} large={props.large}>
         {
             props.skills &&
             props.skills.map( (skill, index) => (
