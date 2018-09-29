@@ -36,10 +36,19 @@ class ProjectList extends React.Component {
     }
 
     findUniqueSkill() {
+        // TODO: Refactor filter method
         const uniqueSkills = [];
         this.state.projects.map( project => {
             return project.skills.filter( skill => {
-                if (!uniqueSkills.find( item => skill === item)) {
+                if (!uniqueSkills.find( item => skill.toLowerCase() === item.toLowerCase())) {
+                    uniqueSkills.push(skill);
+                }
+            })
+        })
+
+        this.state.projects.map( project => {
+            return project.stacks.filter( skill => {
+                if (!uniqueSkills.find( item => skill.toLowerCase() === item.toLowerCase())) {
                     uniqueSkills.push(skill);
                 }
             })
@@ -53,12 +62,25 @@ class ProjectList extends React.Component {
     }
 
     filterProjects() {
+        // TODO: Refactor filter method
         const filteredProjects = [];
         if (this.state.filterKeys.length > 0) {
             this.state.projects.map( project => {
                 project.skills.filter( skill => {
                     this.state.filterKeys.map( key => {
                         if (skill.toLowerCase() === key.toLowerCase()) {
+                            if (!filteredProjects.find( item => item.id === project.id)) {
+                                filteredProjects.push(project);
+                            }
+                        };
+                    })
+                })
+            });
+
+            this.state.projects.map( project => {
+                project.stacks.filter( stack => {
+                    this.state.filterKeys.map( key => {
+                        if (stack.toLowerCase() === key.toLowerCase()) {
                             if (!filteredProjects.find( item => item.id === project.id)) {
                                 filteredProjects.push(project);
                             }
@@ -125,7 +147,9 @@ class ProjectList extends React.Component {
                 <Grid container spacing={16}>
                     {
                         this.state.filteredProjects &&
-                        this.state.filteredProjects.map(project => (
+                        this.state.filteredProjects
+                            .sort((a, b) => a.id - b.id)
+                            .map(project => (
                             <Grid item key={project.id} xs={12} sm={6} md={4}>
                                 <Project project={project} />
                             </Grid>
