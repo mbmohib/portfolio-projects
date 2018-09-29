@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid'
 import data from '../data.js'
 import Container from './Container'
@@ -6,7 +7,16 @@ import Skills from './Skills'
 import DrawerToggle from './DrawerToggle'
 import Project from './Project'
 import SelectedSkills from './SelectedSkills'
+import SkillsMobile from './SkillsMobile'
+import media from '../style/mediaQuery';
 
+const SkillsWrapper = styled.div`
+    display: none;
+
+    ${media.tablet`
+        display: block !important;
+    `}
+`;
 class ProjectList extends React.Component {
     state = {
         projects: undefined,
@@ -136,9 +146,11 @@ class ProjectList extends React.Component {
         let filterText
 
         if (item.nodeName === 'LI') {
-            filterText = item.innerText
+            filterText = item.innerText;
         } else if (item.nodeName === 'IMG') {
-            filterText = item.parentNode.innerText
+            filterText = item.parentNode.innerText;
+        } else {
+            filterText = item;
         }
 
         if (
@@ -165,11 +177,18 @@ class ProjectList extends React.Component {
     render() {
         return (
             <Container>
-                <Skills
-                    large
-                    skills={this.state.skills}
-                    handleFilter={this.handleFilter}
-                />
+                <SkillsWrapper>
+                    <Skills
+                        large
+                        skills={this.state.skills}
+                        handleFilter={this.handleFilter}
+                    />
+                </SkillsWrapper>
+
+                <SkillsMobile 
+                        skills={this.state.skills}
+                        handleFilter={this.handleFilter}
+                    />
 
                 <Grid container spacing={24}>
                     {this.state.filteredProjects &&

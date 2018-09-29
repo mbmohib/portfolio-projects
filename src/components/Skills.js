@@ -2,18 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 import images from './ImportImages';
 import DeleteIcon from '../images/delete.svg';
+import media from '../style/mediaQuery';
 
 const SkillsWrapper = styled.ul`
     display: ${props => props.list.display};
     flex-wrap: ${props => props.list.flexWrap};
     padding: ${props => props.large ? '20px 0' : '10px 0'};
     justify-content: ${props => props.large ? 'center' : 'flex-start'};
-    margin-bottom: ${props => props.large ? '50px' : '0'};
-    margin-top: ${props => props.large ? '50px' : '0'};
+    margin-bottom: ${props => props.large ? '15px' : '0'};
+    margin-top: ${props => props.large ? '15px' : '0'};
+
+    ${media.tablet`
+        margin-bottom: ${props => props.large ? '20px' : '0'};
+        margin-top: ${props => props.large ? '20px' : '0'};
+    `}
+
+    ${media.smallLaptop`
+        margin-bottom: ${props => props.large ? '50px' : '0'};
+        margin-top: ${props => props.large ? '50px' : '0'};
+    `}
 
     li {
         list-style: none;
-        padding: ${props => props.large ? '10px 15px' : '4px 10px'};
+        padding: ${props => props.large ? '5px 5px' : '4px 10px'};
         margin-right: ${props => props.large ? '20px' : '10px'};
         font-size: ${props => props.large ? '1.3rem' : '1rem'};
         border-radius: ${props => props.large ? '5px' : '35px'};
@@ -32,6 +43,14 @@ const SkillsWrapper = styled.ul`
         :hover {
             background: ${props => props.theme.greyColorTwo};
         }
+
+        ${media.tablet`
+            padding: ${props => props.large ? '8px 10px' : '4px 10px'};
+        `}
+
+        ${media.smallLaptop`
+            padding: ${props => props.large ? '10px 15px' : '4px 10px'};
+        `}
 
         img {
             width: 25px;

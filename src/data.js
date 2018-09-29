@@ -7,7 +7,6 @@ export default [
             'Ant Design',
             'Style Components',
             'React Router',
-            'Material UI'
         ],
         stacks: ['React'],
         github_link: 'https://github.com/mbmohib/marvel-api-react',
@@ -91,8 +90,8 @@ export default [
         thumbnail: 'mohib-portfolio',
         skills: [
             'Material UI',
-            'Ant Design',
             'Style Components',
+            'React Router'
         ],
         stacks: ['React'],
         github_link: 'https://github.com/mbmohib/read-more-button-plugin',

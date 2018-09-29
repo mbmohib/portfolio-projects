@@ -17,6 +17,7 @@ import bulbulsarwar from '../images/bulbulsarwar.png';
 import readMoreBtn from '../images/read-more-button-plugin.png';
 import ongshumali from '../images/ongshumali.jpg';
 import mohib from '../images/mohib.png';
+import mohibPortfolio from '../images/mohib-portfolio.png';
 
 export default {
     javascript: javascriptLogo,
@@ -38,4 +39,5 @@ export default {
     'read-more-button-plugin': readMoreBtn,
     'mohib-me': mohib,
     'ongshumali': ongshumali,
+    'mohib-portfolio': mohibPortfolio,
 }

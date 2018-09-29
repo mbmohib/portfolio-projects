@@ -3,20 +3,25 @@ import Container from './Container';
 import Nav from './Nav';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
+import media from '../style/mediaQuery';
 
 const HeaderWrapper = styled.div`
     background: ${props => props.theme.secondaryColor}
 `;
 
 const Logo = styled.a`
-    padding: 10px;
     color: ${props => props.theme.fontColor};
-    font-size: 1.2rem;
+    padding: 5px;
+    font-size:1.5rem;
     text-transform: lowercase;
     display: block;
     font-weight: ${props => props.theme.lightWeight};
     font-family: ${props => props.theme.titleFont};
-    font-size: 2rem;
+
+    ${media.tablet`
+        padding: 10px;
+        font-size: 2rem;
+    `}
 `;
 
 const Header = () => {
