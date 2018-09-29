@@ -106,8 +106,8 @@ const Project = props => {
                     props.project.github_link &&
                     <Button 
                         href={props.project.github_link}
-                        color={props.project.live_link ? '' : 'primary'}
-                        variant={props.project.live_link ? '' : 'contained'}
+                        color={props.project.live_link ? 'inherit' : 'primary'}
+                        variant={props.project.live_link ? 'flat' : 'contained'}
                         >
                         Github
                     </Button>
