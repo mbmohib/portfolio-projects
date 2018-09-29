@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const FooterWrapper = styled.div`
     background: ${props => props.theme.secondaryColor};
     padding: ${props => props.theme.mediumSpace};
-    margin-top: ${props => props.theme.mediumSpace};
+    margin-top: ${props => props.theme.largeSpace};
 `;
 
 const Footer = () => (

@@ -8,6 +8,8 @@ const SkillsWrapper = styled.ul`
     flex-wrap: ${props => props.list.flexWrap};
     padding: ${props => props.large ? '20px 0' : '10px 0'};
     justify-content: ${props => props.large ? 'center' : 'flex-start'};
+    margin-bottom: ${props => props.large ? '50px' : '0'};
+    margin-top: ${props => props.large ? '50px' : '0'};
 
     li {
         list-style: none;

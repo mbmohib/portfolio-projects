@@ -7,11 +7,12 @@ import Button from '@material-ui/core/Button';
 import images from './ImportImages';
 
 const Hero = styled.div`
-    ${'' /* cursor: pointer; */}
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     transition: all .3s;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
-    margin-bottom: ${props => props.theme.mediumSpace};
 
     :hover {
         ${'' /* box-shadow: 0 14px 25px rgba(0,0,0,.16); */}
@@ -20,12 +21,17 @@ const Hero = styled.div`
 `;
 
 const HeroMeta = styled.div`
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
     header {
         padding: ${props => props.theme.smallSpace};
     }
 
     main {
         padding: ${props => props.theme.smallSpace};
+        flex-grow: 1;
     }
     
     footer {
