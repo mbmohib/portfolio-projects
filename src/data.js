@@ -23,6 +23,15 @@ export default [
         live_link: 'https://mbmohib.github.io/marvel-api-vanila-js/'
     },
     {
+        id: '003',
+        title: 'Ongshumali',
+        thumbnail: 'ongshumali',
+        skills: ['UIkit'],
+        stacks: ['Wordpress'],
+        github_link: '',
+        live_link: 'https://ongshumali.servermold.com/'
+    },
+    {
         id: '009',
         title: 'Mohib Portfolio Website',
         thumbnail: 'mohib-me',

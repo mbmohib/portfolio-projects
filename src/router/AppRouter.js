@@ -6,12 +6,14 @@ import Footer from '../components/Footer'
 
 const AppRouter = () => (
     <BrowserRouter>
-        <div>
+        <div className="wrapper">
             <Header />
-                <Switch>
-                    <Route path="/" component={ProjectList} exact={true} />
-                    {/* <Route path="/project/:id" component={Project} /> */}
-                </Switch>
+                <main>
+                    <Switch>
+                        <Route path="/" component={ProjectList} exact={true} />
+                        {/* <Route path="/project/:id" component={Project} /> */}
+                    </Switch>
+                </main>
             <Footer />
         </div>
     </BrowserRouter>

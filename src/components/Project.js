@@ -64,6 +64,12 @@ const HeroFooter = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    a {
+        :last-child {
+            margin-left: ${props => props.theme.smallSpace};
+        }
+    }
 `;
 
 const Project = props => {
@@ -96,12 +102,26 @@ const Project = props => {
             </HeroMeta>
     
             <HeroFooter>
-                <Button href={props.project.github_link}>
-                    Github
-                </Button>
-                <Button href={props.project.live_link} variant="contained" color="primary">
-                    Go Live
-                </Button>
+                {
+                    props.project.github_link &&
+                    <Button 
+                        href={props.project.github_link}
+                        color={props.project.live_link ? '' : 'primary'}
+                        variant={props.project.live_link ? '' : 'contained'}
+                        >
+                        Github
+                    </Button>
+                }
+                {
+                    props.project.live_link &&
+                    <Button 
+                        href={props.project.live_link} 
+                        variant="contained" 
+                        color="primary"
+                        >
+                        Go Live
+                    </Button>
+                }
             </HeroFooter>
         </Hero>
     )

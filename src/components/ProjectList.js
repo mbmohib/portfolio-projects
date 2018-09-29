@@ -1,9 +1,10 @@
 import React from 'react'
-import Container from './Container'
-import Skills from './Skills'
-import Project from '../components/Project'
 import Grid from '@material-ui/core/Grid'
 import data from '../data.js'
+import Container from './Container'
+import Skills from './Skills'
+import DrawerToggle from './DrawerToggle'
+import Project from './Project'
 import SelectedSkills from './SelectedSkills';
 
 class ProjectList extends React.Component {
@@ -11,7 +12,8 @@ class ProjectList extends React.Component {
         projects: undefined,
         filteredProjects: [],
         skills : [],
-        filterKeys: []
+        filterKeys: [],
+        openDrawer: false
     }
 
     componentDidMount() {
@@ -103,10 +105,16 @@ class ProjectList extends React.Component {
         if (!this.state.filterKeys.find( key => key.toLowerCase() === filterText.toLowerCase())) {
             this.setState((prevState) => ({ filterKeys: prevState.filterKeys.concat(filterText) }));
         }
+
+        this.setState(() => ({ openDrawer: true }))
     }
 
     clearAllFilterKeys = () => {
-        this.setState(() => ({ filterKeys: [] }))
+        this.setState(() => ({ filterKeys: [], openDrawer: false }))
+    }
+
+    toggleDrawer = () => {
+        this.setState((prevState) => ({ openDrawer: !prevState.openDrawer }));
     }
 
     render() {
@@ -125,7 +133,20 @@ class ProjectList extends React.Component {
                     }
                 </Grid>
 
-                <SelectedSkills clearAllFilterKeys={this.clearAllFilterKeys} deleteFilter={this.deleteFilter} skills={this.state.filterKeys}/>
+                <SelectedSkills 
+                    clearAllFilterKeys={this.clearAllFilterKeys} 
+                    deleteFilter={this.deleteFilter} 
+                    skills={this.state.filterKeys}
+                    open={this.state.openDrawer}
+                    toggleDrawer={this.toggleDrawer}
+                    />
+                {
+                    this.state.filterKeys.length > 0 &&
+                    <DrawerToggle 
+                        show={!this.state.openDrawer} 
+                        toggleDrawer={this.toggleDrawer}
+                        />
+                }
             </Container>
         )
     }

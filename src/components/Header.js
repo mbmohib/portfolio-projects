@@ -25,13 +25,13 @@ const Header = () => {
         <HeaderWrapper>
             <Container>
                 <Grid container>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} sm={4}>
                         <Logo target="blank" href="https://mohib.me" dangerouslySetInnerHTML={{
                             __html: '< mohib />'
                         }}>
                         </Logo>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid item xs={12} sm={8}>
                         <Nav />
                     </Grid>
                 </Grid>

@@ -1,5 +1,5 @@
 export default {
-    primaryColor: '#26C281',
+    primaryColor: '#3f51b5',
     secondaryColor: '#edeef3',
     greyColorOne: 'hsl(200, 25%, 96%)',
     greyColorTwo: 'hsl(200, 25%, 88%)',
