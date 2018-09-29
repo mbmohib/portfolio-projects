@@ -110,7 +110,8 @@ const Project = props => {
             <HeroFooter>
                 {
                     props.project.github_link &&
-                    <Button 
+                    <Button
+                        target="_blank"
                         href={props.project.github_link}
                         color={props.project.live_link ? 'inherit' : 'primary'}
                         variant={props.project.live_link ? 'flat' : 'contained'}
@@ -120,7 +121,8 @@ const Project = props => {
                 }
                 {
                     props.project.live_link &&
-                    <Button 
+                    <Button
+                        target="_blank"
                         href={props.project.live_link} 
                         variant="contained" 
                         color="primary"
