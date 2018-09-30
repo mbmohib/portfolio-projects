@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import media from '../style/mediaQuery';
+import styled from 'styled-components'
+import media from '../style/mediaQuery'
 
-const Wrapper = styled.div`
+// Site Container accordint to bootstrap container
+const Container = styled.div`
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -21,10 +21,4 @@ const Wrapper = styled.div`
     `}
 `
 
-const Container = props => (
-    <Wrapper>
-        {props.children}
-    </Wrapper>
-)
-
-export default Container;
+export default Container

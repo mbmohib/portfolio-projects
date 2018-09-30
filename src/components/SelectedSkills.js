@@ -22,7 +22,6 @@ const ButtonWrapper = styled.div`
 const SelectedSkills = props => (
     <Drawer
         variant="persistent"
-        anchor="bottom"
         open={props.open}
         anchor="right"
     >

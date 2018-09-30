@@ -34,28 +34,36 @@ class ProjectList extends React.Component {
                 }
             },
             () => {
+                // After data fetched find unique skills
+                // and showing them for filtering
                 this.findUniqueSkill()
+
+                // Show projects based on 'filteredProjects' state
+                // for 1st time it shows all projects
                 this.filterProjects()
             }
         )
     }
 
     componentDidUpdate(prevProps, prevState) {
+        // Check if any new filter key added or deleted
+        // then filter again
         if (prevState.filterKeys.length !== this.state.filterKeys.length) {
             this.filterProjects()
         }
     }
 
+    /*
+    * Loop through all skills of project and store
+    * unique skill in a loop
+    */
     findUniqueSkill() {
         // TODO: Refactor filter method
         const uniqueSkills = []
         this.state.projects.map(project => {
             return project.skills.filter(skill => {
-                if (
-                    !uniqueSkills.find(
-                        item => skill.toLowerCase() === item.toLowerCase()
-                    )
-                ) {
+                // find unique filter key from skills array
+                if (!uniqueSkills.find(item => skill.toLowerCase() === item.toLowerCase())) {
                     uniqueSkills.push(skill)
                 }
             })
@@ -63,11 +71,8 @@ class ProjectList extends React.Component {
 
         this.state.projects.map(project => {
             return project.stacks.filter(skill => {
-                if (
-                    !uniqueSkills.find(
-                        item => skill.toLowerCase() === item.toLowerCase()
-                    )
-                ) {
+                // find unique filter key from skills array
+                if (!uniqueSkills.find(item => skill.toLowerCase() === item.toLowerCase())) {
                     uniqueSkills.push(skill)
                 }
             })
@@ -80,19 +85,21 @@ class ProjectList extends React.Component {
         })
     }
 
+    /*
+    * Filter Projects according to key in 'filterKeys' state
+    */
     filterProjects() {
         // TODO: Refactor filter method
         const filteredProjects = []
         if (this.state.filterKeys.length > 0) {
+            // Find projects from skills array
             this.state.projects.map(project => {
                 project.skills.filter(skill => {
                     this.state.filterKeys.map(key => {
                         if (skill.toLowerCase() === key.toLowerCase()) {
-                            if (
-                                !filteredProjects.find(
-                                    item => item.id === project.id
-                                )
-                            ) {
+                            // Only push projects to 'filteredProjects' array 
+                            // if not present
+                            if (!filteredProjects.find(item => item.id === project.id)) {
                                 filteredProjects.push(project)
                             }
                         }
@@ -100,9 +107,12 @@ class ProjectList extends React.Component {
                 })
             })
 
+            // Find projects from stacks array
             this.state.projects.map(project => {
                 project.stacks.filter(stack => {
                     this.state.filterKeys.map(key => {
+                        // Only push projects to 'filteredProjects' array 
+                        // if not present
                         if (stack.toLowerCase() === key.toLowerCase()) {
                             if (
                                 !filteredProjects.find(
@@ -116,6 +126,7 @@ class ProjectList extends React.Component {
                 })
             })
         } else {
+            // if no filter added show all projects
             filteredProjects.push(...this.state.projects)
         }
 
@@ -142,6 +153,9 @@ class ProjectList extends React.Component {
         this.setState(() => ({ filterKeys: newFilterKeys }))
     }
 
+    /*
+    * Find filter value after clicking
+    */
     handleFilter = item => {
         let filterText
 
@@ -153,11 +167,8 @@ class ProjectList extends React.Component {
             filterText = item;
         }
 
-        if (
-            !this.state.filterKeys.find(
-                key => key.toLowerCase() === filterText.toLowerCase()
-            )
-        ) {
+        // Add filter key to 'filterKeys' state only if not added before
+        if (!this.state.filterKeys.find(key => key.toLowerCase() === filterText.toLowerCase())) {
             this.setState(prevState => ({
                 filterKeys: prevState.filterKeys.concat(filterText)
             }))
@@ -177,6 +188,7 @@ class ProjectList extends React.Component {
     render() {
         return (
             <Container>
+                {/* Show Skill in tablet, desktop devices */}
                 <SkillsWrapper>
                     <Skills
                         large
@@ -185,6 +197,7 @@ class ProjectList extends React.Component {
                     />
                 </SkillsWrapper>
 
+                {/* Show Skill in mobile devices */}
                 <SkillsMobile 
                         skills={this.state.skills}
                         handleFilter={this.handleFilter}
@@ -210,6 +223,7 @@ class ProjectList extends React.Component {
                             ))}
                 </Grid>
 
+                {/* Open Drawer and show selected filters */}
                 <SelectedSkills
                     clearAllFilterKeys={this.clearAllFilterKeys}
                     deleteFilter={this.deleteFilter}

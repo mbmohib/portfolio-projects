@@ -12,9 +12,4 @@ class App extends Component {
     }
 }
 
-// TODO: 
-// 2. Masonary Grid
-// 6. Refactor Filter Method
-// 6. Responsive
-
 export default App
