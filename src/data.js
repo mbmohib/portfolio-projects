@@ -25,7 +25,7 @@ export default [
         id: '003',
         title: 'Ongshumali',
         thumbnail: 'ongshumali',
-        skills: ['UIkit'],
+        skills: ['UIkit', 'WP REST API'],
         stacks: ['Wordpress'],
         github_link: '',
         live_link: 'https://ongshumali.servermold.com/'
@@ -43,7 +43,7 @@ export default [
         id: '004',
         title: 'Meghchil',
         thumbnail: 'meghchil',
-        skills: ['Bootstrap'],
+        skills: ['Bootstrap', 'PSD to HTML'],
         stacks: ['Wordpress'],
         github_link: '',
         live_link: 'https://meghchil.com/'
@@ -52,7 +52,7 @@ export default [
         id: '005',
         title: 'Srijonbd',
         thumbnail: 'srijonbd',
-        skills: ['Bootstrap'],
+        skills: ['Bootstrap', 'PSD to HTML'],
         stacks: ['Wordpress'],
         github_link: '',
         live_link: 'http://srijonbd.com/'
@@ -61,7 +61,7 @@ export default [
         id: '010',
         title: 'Bulbulsarwar',
         thumbnail: 'bulbulsarwar',
-        skills: ['Bootstrap'],
+        skills: ['Bootstrap', 'PSD to HTML'],
         stacks: ['Wordpress'],
         github_link: '',
         live_link: 'https://bulbulsarwar.com/'
