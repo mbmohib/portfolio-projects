@@ -4,7 +4,7 @@
 
 
 ## Live
-<!-- Demo [https://m-heros.firebaseapp.com](https://m-heros.firebaseapp.com) -->
+Demo [https://github.com/mbmohib/portfolio-projects](https://github.com/mbmohib/portfolio-projects)
 
 
 ## Built With
@@ -25,8 +25,6 @@
 * >$ git clone [repo-link]
 
 * > $ npm install
-
-* > Set up a account in Marvel official website and and use API credentials
 
 * > npm start
 

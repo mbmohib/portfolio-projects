@@ -86,45 +86,44 @@ class ProjectList extends React.Component {
     }
 
     /*
+    * Return True if project matched with filter key
+    */
+    matchedProject(item, keys) {
+        let foundItem;
+        
+        for(let i=0; i<item[keys].length; i++) {
+            foundItem = this.state.filterKeys.some(key => {
+                return key.toLowerCase() === item[keys][i].toLowerCase();
+            });
+
+            if(foundItem) {
+                return true;
+            } else {
+                continue;
+            }
+        }
+        return false;
+    }
+
+    /*
     * Filter Projects according to key in 'filterKeys' state
     */
     filterProjects() {
-        // TODO: Refactor filter method
-        const filteredProjects = []
+
+        let filteredProjects = [];
         if (this.state.filterKeys.length > 0) {
             // Find projects from skills array
-            this.state.projects.map(project => {
-                project.skills.filter(skill => {
-                    this.state.filterKeys.map(key => {
-                        if (skill.toLowerCase() === key.toLowerCase()) {
-                            // Only push projects to 'filteredProjects' array 
-                            // if not present
-                            if (!filteredProjects.find(item => item.id === project.id)) {
-                                filteredProjects.push(project)
-                            }
-                        }
-                    })
-                })
+            const skillWise = this.state.projects.filter(project => {
+                return this.matchedProject(project, 'skills');
             })
 
             // Find projects from stacks array
-            this.state.projects.map(project => {
-                project.stacks.filter(stack => {
-                    this.state.filterKeys.map(key => {
-                        // Only push projects to 'filteredProjects' array 
-                        // if not present
-                        if (stack.toLowerCase() === key.toLowerCase()) {
-                            if (
-                                !filteredProjects.find(
-                                    item => item.id === project.id
-                                )
-                            ) {
-                                filteredProjects.push(project)
-                            }
-                        }
-                    })
-                })
-            })
+            const stackWise = this.state.projects.filter(project => {
+                return this.matchedProject(project, 'stacks');
+            });
+
+            filteredProjects = filteredProjects.concat(...skillWise, ...stackWise);
+
         } else {
             // if no filter added show all projects
             filteredProjects.push(...this.state.projects)
@@ -132,7 +131,9 @@ class ProjectList extends React.Component {
 
         this.setState(prevState => {
             return {
-                filteredProjects: filteredProjects
+                filteredProjects: filteredProjects.filter( (project, index, self) => {
+                    return self.indexOf(project) === index;
+                })
             }
         })
     }
