@@ -12,14 +12,13 @@ Demo [https://mohib-projects.firebaseapp.com/](https://mohib-projects.firebaseap
 * [React](https://reactjs.org/)
 * [React Router](https://github.com/ReactTraining/react-router)
 * [styled-components](https://www.styled-components.com/)
-* [Ant Design](https://ant.design/)
+* [Material UI](https://material-ui.com/)
 
 ## What I have done
 
 * Followed React file structure pattern.
-* Use Ant Design for Grid, Drawer, Loading effect etc
+* Use Material UI for Grid, Drawer, Loading effect etc
 * Used styled-components for styling purpose.
-* For module bundling used Webpack
 
 # How to use
 * >$ git clone [repo-link]
