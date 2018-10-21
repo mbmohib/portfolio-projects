@@ -21,7 +21,7 @@ class ProjectList extends React.Component {
     state = {
         projects: undefined,
         filteredProjects: [],
-        skills: [],
+        skills: ['React', 'Javascript', 'Wordpress'],
         filterKeys: [],
         openDrawer: false
     }
@@ -36,7 +36,7 @@ class ProjectList extends React.Component {
             () => {
                 // After data fetched find unique skills
                 // and showing them for filtering
-                this.findUniqueSkill()
+                // this.findUniqueSkill()
 
                 // Show projects based on 'filteredProjects' state
                 // for 1st time it shows all projects
@@ -210,6 +210,7 @@ class ProjectList extends React.Component {
                             .sort((a, b) => a.id - b.id)
                             .map(project => (
                                 <Grid
+                                    style={{ paddingBottom: 50}}
                                     item
                                     key={project.id}
                                     xs={12}

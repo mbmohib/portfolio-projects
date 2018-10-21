@@ -27,7 +27,7 @@ const Link = styled.a`
 const Nav = () => (
     <NavWrapper>
         <Link target="_blank" href="https://mohib.me/">Home</Link>
-        <Link target="_blank" href="https://mohib.me/">Fork This Repo</Link>
+        <Link target="_blank" href="https://github.com/mbmohib/portfolio-projects">Fork This Repo</Link>
     </NavWrapper>
 )
 
