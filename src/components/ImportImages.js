@@ -20,6 +20,7 @@ import readMoreBtn from '../images/read-more-button-plugin.png';
 import ongshumali from '../images/ongshumali.jpg';
 import mohib from '../images/mohib.png';
 import mohibPortfolio from '../images/mohib-portfolio.png';
+import freecodecamp from '../images/freecodecamp.jpeg';
 
 export default {
     javascript: javascriptLogo,
@@ -44,4 +45,5 @@ export default {
     'mohib-me': mohib,
     'ongshumali': ongshumali,
     'mohib-portfolio': mohibPortfolio,
+    'freecodecamp': freecodecamp,
 }

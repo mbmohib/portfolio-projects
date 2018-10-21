@@ -28,7 +28,7 @@ export default [
         skills: ['UIkit', 'WP REST API'],
         stacks: ['Wordpress'],
         github_link: '',
-        live_link: 'https://ongshumali.servermold.com/'
+        live_link: 'https://ongshumali.com'
     },
     {
         id: '009',
@@ -96,5 +96,35 @@ export default [
         stacks: ['React'],
         github_link: 'https://github.com/mbmohib/portfolio-projects',
         live_link: 'http://mohib-projects.firebaseapp.com'
-    }
+    },
+    {
+        id: '011',
+        title: 'Drum Machine (Freecodecamp Project)',
+        thumbnail: 'freecodecamp',
+        skills: [
+        ],
+        stacks: ['React'],
+        github_link: '',
+        live_link: 'https://codepen.io/mbmohib/pen/MPEKJN'
+    },
+    {
+        id: '012',
+        title: 'Markdown Previewer (Freecodecamp Project)',
+        thumbnail: 'freecodecamp',
+        skills: [
+        ],
+        stacks: ['React'],
+        github_link: '',
+        live_link: 'https://codepen.io/mbmohib/pen/xyXwyx'
+    },
+    {
+        id: '013',
+        title: 'Quote Machine (Freecodecamp Project)',
+        thumbnail: 'freecodecamp',
+        skills: [
+        ],
+        stacks: ['React'],
+        github_link: '',
+        live_link: 'https://codepen.io/mbmohib/pen/OBxyQg'
+    },
 ]
