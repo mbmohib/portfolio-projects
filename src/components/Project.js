@@ -1,10 +1,10 @@
-import React from 'react'
-import Skills from './Skills'
-import styled from 'styled-components'
-import Title from './Title'
-import SubTitle from './Subtitle'
-import Button from '@material-ui/core/Button'
-import images from './ImportImages'
+import React from 'react';
+import Skills from './Skills';
+import styled from 'styled-components';
+import Title from './Title';
+import SubTitle from './Subtitle';
+import Button from '@material-ui/core/Button';
+import images from './ImportImages';
 
 const Hero = styled.div`
     display: flex;
@@ -13,11 +13,7 @@ const Hero = styled.div`
     transition: all 0.3s;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-
-    :hover {
-        ${'' /* box-shadow: 0 14px 25px rgba(0,0,0,.16); */} ${'' /* border-color: rgba(0, 0, 0, 0.09); */};
-    }
-`
+`;
 
 const HeroMeta = styled.div`
     flex-grow: 1;
@@ -40,7 +36,7 @@ const HeroMeta = styled.div`
         padding: 15px 10px;
         border-top: 1px solid #cdcdcd;
     }
-`
+`;
 
 const HeroMetaFooterItem = styled.div`
     display: flex;
@@ -54,13 +50,13 @@ const HeroMetaFooterItem = styled.div`
     a {
         color: hsl(0, 0%, 42%);
     }
-`
+`;
 
 const Thumbnail = styled.figure`
     img {
         border-radius: 5px 5px 0 0;
     }
-`
+`;
 
 const HeroFooter = styled.div`
     background: ${props => props.theme.greyColorTwo};
@@ -75,7 +71,7 @@ const HeroFooter = styled.div`
             margin-left: ${props => props.theme.smallSpace};
         }
     }
-`
+`;
 
 const Project = props => (
     <Hero>
@@ -127,6 +123,6 @@ const Project = props => (
             )}
         </HeroFooter>
     </Hero>
-)
+);
 
-export default Project
+export default Project;

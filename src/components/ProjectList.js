@@ -21,7 +21,7 @@ class ProjectList extends React.Component {
     state = {
         projects: undefined,
         filteredProjects: [],
-        skills: ['React', 'Javascript', 'Wordpress'],
+        skills: ['React', 'Javascript'],
         filterKeys: [],
         openDrawer: false
     }
