@@ -1,5 +1,6 @@
 import javascriptLogo from '../images/javascript.svg';
 import ReactLogo from '../images/react.png';
+import ReduxLogo from '../images/redux.svg';
 import WordpressLogo from '../images/wordpress.svg';
 import AntLogo from '../images/ant-design.svg'
 import ReactRouterLogo from '../images/react-router.png'
@@ -22,10 +23,12 @@ import mohib from '../images/mohib.png';
 import mohibPortfolio from '../images/mohib-portfolio.png';
 import freecodecamp from '../images/freecodecamp.jpeg';
 import flixgo from '../images/flixgo.jpg';
+import todolist from '../images/todolist.png';
 
 export default {
     javascript: javascriptLogo,
     react: ReactLogo,
+    redux: ReduxLogo,
     wordpress: WordpressLogo,
     'ant-design': AntLogo,
     'react-router': ReactRouterLogo,
@@ -48,4 +51,5 @@ export default {
     'mohib-portfolio': mohibPortfolio,
     'freecodecamp': freecodecamp,
     'flixgo': flixgo,
+    'todolist': todolist,
 }
